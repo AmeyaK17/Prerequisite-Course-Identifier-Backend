@@ -19,10 +19,10 @@ public class CVController {
     @Autowired
     CVService cvService;
     
-    @PostMapping("/getCourses")
-    public ResponseEntity<String> getCourses (@RequestBody List<Course> courses) {
-        cvService.getCourses(courses);
-        return new ResponseEntity<>("Data Received", HttpStatus.OK);
+    @PostMapping("/getOrdering")
+    public ResponseEntity<List<Course>> getOrdering (@RequestBody List<Course> courses) {
+        List<Course> orderedCourses = cvService.getOrdering(courses);
+        return new ResponseEntity<>(orderedCourses, HttpStatus.OK);
     }
 
     @GetMapping("/test")
