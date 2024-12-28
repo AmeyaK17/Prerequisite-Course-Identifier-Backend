@@ -37,6 +37,6 @@ jobs:
       - name: Render Deployment
         run: |
             curl --request POST \
-            --url https://api.render.com/v1/services/prerequisite-course-identifier-backend/deploys \
+            --url https://api.render.com/v1/services/srv-ctnksmtsvqrc73b278g0/deploys \
             --header 'accept: application/json' \
             --header "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}"
