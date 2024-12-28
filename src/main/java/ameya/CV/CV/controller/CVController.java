@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin(origins = "https://prerequisite-course-identifier-frontend.vercel.app/")
 public class CVController {
     @Autowired
     CVService cvService;
