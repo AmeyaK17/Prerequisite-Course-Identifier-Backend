@@ -34,4 +34,9 @@ jobs:
       - name: Push Docker Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/prerequisite-course-identifier-backend:latest
       
-        
+      - name: Render Deployment
+        run: |
+            curl --request POST \
+            --url https://api.render.com/v1/services/prerequisite-course-identifier-backend/deploys \
+            --header 'accept: application/json' \
+            --header "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}"
